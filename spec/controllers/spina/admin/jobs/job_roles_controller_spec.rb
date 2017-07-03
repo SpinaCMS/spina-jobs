@@ -20,16 +20,6 @@ module Spina::Admin
         end
       end
 
-      describe 'GET #show' do
-        subject { get :show, params: { id: job_role.id } }
-        it { is_expected.to have_http_status :success }
-        it { is_expected.to render_template :show }
-        it 'assigns job role' do
-          subject
-          expect(assigns(:job_role)).to eq Spina::Jobs::JobRoleDecorator.new(job_role)
-        end
-      end
-
       describe 'GET #new' do
         subject { get :new }
         it { is_expected.to render_template :new }

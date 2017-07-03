@@ -14,10 +14,6 @@ module Spina
           @job_roles = Spina::Jobs::JobRole.order(created_at: :desc).decorate
         end
 
-        def show
-          @job_role = Spina::Jobs::JobRole.find params[:id]
-        end
-
         def new
           @job_role = Spina::Jobs::JobRole.new(enabled: true)
           add_breadcrumb I18n.t('spina.jobs.job_roles.new')

@@ -7,7 +7,7 @@ module Spina
     end
 
     def yet_to_be_published?
-      !model.draft? and model.enabled? and model.published_at and model.published_at > Time.now
+      model.live? and model.enabled? and model.published_at and model.published_at > Time.now
     end
   end
 end

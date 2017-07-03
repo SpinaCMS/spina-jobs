@@ -11,8 +11,25 @@ module Spina::Jobs
       :skills, :languages, :salary, :hours, :employment_terms, :length, :contact,
       maximum: 255
 
+      scope :available, -> { where('published_at <= ?', Time.zone.now) }
+      scope :future, -> { where('published_at >= ?', Time.zone.now) }
+      scope :draft, -> { where(draft: true) }
+      scope :live, -> { where(draft: false) }
+
+    before_save :set_published_at
+
     def disabled?
       !enabled?
+    end
+
+    def live?
+      !draft?
+    end
+
+    private
+
+    def set_published_at
+      self.published_at = Time.zone.now if live? and published_at.blank?
     end
 
     # If title changes tell friendly_id to regenerate slug when saving record
@@ -22,10 +39,6 @@ module Spina::Jobs
 
     def friendly_id_source
       title
-    end
-
-    def live?
-      !draft? && published_at <= Time.now
     end
 
   end

@@ -11,7 +11,7 @@ Spina::Engine.routes.draw do
 
   namespace :admin do
     namespace :jobs do
-      resources :job_roles, path: :roles
+      resources :job_roles, path: :roles, except: :show
       resource :job_settings, path: :settings, only: [:edit, :update]
     end
   end
