@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/initforthe/spina-blog.svg?branch=master)](https://travis-ci.org/initforthe/spina-blog) [![Code Climate](https://codeclimate.com/github/initforthe/spina-blog/badges/gpa.svg)](https://codeclimate.com/github/initforthe/spina-blog) [![Test Coverage](https://codeclimate.com/github/initforthe/spina-blog/badges/coverage.svg)](https://codeclimate.com/github/initforthe/spina-blog/coverage)
+[![Build Status](https://travis-ci.org/initforthe/spina-jobs.svg?branch=master)](https://travis-ci.org/initforthe/spina-jobs) [![Code Climate](https://codeclimate.com/github/initforthe/spina-jobs/badges/gpa.svg)](https://codeclimate.com/github/initforthe/spina-jobs) [![Test Coverage](https://codeclimate.com/github/initforthe/spina-jobs/badges/coverage.svg)](https://codeclimate.com/github/initforthe/spina-jobs/coverage)
 
 # Spina::Jobs
 Short description and motivation.
