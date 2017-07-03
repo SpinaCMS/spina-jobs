@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/initforthe/spina-blog.svg?branch=master)](https://travis-ci.org/initforthe/spina-blog) [![Code Climate](https://codeclimate.com/github/initforthe/spina-blog/badges/gpa.svg)](https://codeclimate.com/github/initforthe/spina-blog) [![Test Coverage](https://codeclimate.com/github/initforthe/spina-blog/badges/coverage.svg)](https://codeclimate.com/github/initforthe/spina-blog/coverage)
+
 # Spina::Jobs
 Short description and motivation.
 
