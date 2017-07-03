@@ -1,0 +1,23 @@
+%tr{data: { id: job_role.id }}
+  %td.nowrap
+    %h3= link_to job_role.title, spina.edit_admin_jobs_job_role_path(job_role.id)
+    %small #{time_ago_in_words(job_role.created_at)} ago
+    .labels
+      - if job_role.disabled?
+        %span.label.label-info= t('spina.jobs.job_roles.disabled')
+      - if job_role.draft?
+        %span.label.label-info= t('spina.jobs.job_roles.concept')
+      - if job_role.yet_to_be_published?
+        %span.label.label-default
+          Will be published on #{job_role.published_date}
+  %td.nowrap
+    = job_role.ref
+
+  %td.nowrap.text-right
+    = link_to spina.jobs_job_role_path(job_role), class: 'button button-small button-link dd-nodrag' do
+      = icon 'eye'
+      = t('spina.view')
+
+    = link_to spina.edit_admin_jobs_job_role_path(job_role.id), class: 'button button-link' do
+      = icon 'pencil-outline'
+      = t('spina.job_roles.edit')

@@ -1,0 +1,24 @@
+- content_for :header_actions do
+  %span
+    = link_to spina.new_admin_jobs_job_role_path, class: 'button button-primary', style: 'margin-right: 0' do
+      = icon 'plus'
+      = t 'spina.jobs.jobs.new'
+
+
+
+.table-container
+  %table.table
+    %thead
+      %tr
+        %th Job Title
+        %th Ref
+        %th
+
+    %tbody
+      - if @job_roles.any?
+        = render partial: 'job_role', collection: @job_roles, as: :job_role
+
+      - else
+        %tr
+          %td.align-center{colspan: 3}
+            %em There are no job postings yet. Create your first one!

@@ -1,0 +1,55 @@
+en:
+  spina:
+    view: View
+
+    preferences:
+      jobs: Job Postings
+
+    jobs:
+      title: Job Postings
+
+      job_roles:
+        title: Job Postings
+        new: New Job
+        save: Save jost
+        saving: Saving...
+        saved: Job saved
+        job_content: Content
+        job_configuration: Settings
+        concept: Draft
+
+  activerecord:
+    attributes:
+      spina/jobs/job_role:
+        title: Job Title
+        title_placeholder: Job title
+        introduction: Introduction
+        introduction_placeholder: Introduction
+        description: Job Description
+        description_placeholder: Job Description
+        education: Education
+        education_placeholder: Level of education expected
+        experience: Experience
+        experience_placeholder: Experience is required for this role
+        skills: Skills
+        skills_placeholder: Skills necessary for this role
+        languages: Languages
+        languages_placeholder: Any languages required
+        salary: Salary
+        salary_placeholder: Salary (can be an amount or a range, or just some text eg. "Dependent on experience")
+        employment_terms: Employment Terms
+        employment_terms_placeholder: Full time, part time, contract etc.
+        length: Length of Employment
+        length_placeholder: How long this placement is for (leave blank if permanent)
+        fill: Places to fill
+        fill_placeholder: How many places you have for this role
+        employment_date: Employment Start Date
+        ref: Job Reference
+        ref_placeholder: Reference number for this role
+        enabled: Enabled
+        enabled_description: Whether this job should show on the site or not
+        draft: Draft
+        draft_description: Great for when your job post is not quite finished
+        published_at: Publishing date/time
+        contact: Contact Email
+        contact_placeholder: The email address for job applications (eg. jobs@example.com)

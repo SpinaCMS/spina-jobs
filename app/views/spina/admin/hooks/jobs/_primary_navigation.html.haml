@@ -1,0 +1,8 @@
+%li{class: ('active' if (current_admin_path.start_with?('/jobs')))}
+  = link_to admin_jobs_job_roles_path do
+    = icon 'inbox-outline'
+    = t('spina.jobs.title')
+    = icon 'caret-right'
+  %ul
+    %li{class: ('active' if current_admin_path.start_with?('/jobs'))}
+      = link_to t('spina.jobs.title'), admin_jobs_job_roles_path

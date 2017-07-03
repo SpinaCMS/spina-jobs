@@ -1,0 +1,3 @@
+= form_for [spina, :admin, :jobs, @job_role], url: spina.admin_jobs_job_role_path(@job_role.id),
+  html: {id: 'job_role_form', autocomplete: "off"} do |f|
+  = render 'form', f: f

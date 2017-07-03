@@ -1,0 +1,34 @@
+#job_configuration.tab-content.well
+  .horizontal-form
+
+    .horizontal-form-group
+      .horizontal-form-label
+        = Spina::Jobs::JobRole.human_attribute_name :ref
+      .horizontal-form-content
+        = f.text_field :ref, placeholder: Spina::Jobs::JobRole.human_attribute_name(:ref_placeholder)
+
+    .horizontal-form-group
+      .horizontal-form-label
+        = Spina::Jobs::JobRole.human_attribute_name :enabled
+        %small= Spina::Jobs::JobRole.human_attribute_name :enabled_description
+      .horizontal-form-content
+        = f.check_box :enabled, data: {switch: true}
+
+    .horizontal-form-group
+      .horizontal-form-label
+        = Spina::Jobs::JobRole.human_attribute_name :draft
+        %small= Spina::Jobs::JobRole.human_attribute_name :draft_description
+      .horizontal-form-content
+        = f.check_box :draft, data: {switch: true}
+
+    .horizontal-form-group
+      .horizontal-form-label
+        = Spina::Jobs::JobRole.human_attribute_name :published_at
+      .horizontal-form-content
+        = f.datetime_field :published_at
+
+    .horizontal-form-group
+      .horizontal-form-label
+        = Spina::Jobs::JobRole.human_attribute_name :contact
+      .horizontal-form-content
+        = f.text_field :contact, placeholder: Spina::Jobs::JobRole.human_attribute_name(:contact_placeholder)

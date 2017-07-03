@@ -1,0 +1,43 @@
+- if @job_role.errors.any?
+  - content_for :notifications do
+    .notification.notification-danger.animated.fadeInRight
+      = icon('exclamation')
+      .notification-message
+        =t 'spina.notifications.alert'
+        %small= @job_role.errors.full_messages.join('<br />').html_safe
+      = link_to '#', data: {close_notification: true} do
+        = icon('cross')
+
+%header#header
+  .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
+  - unless @job_role.new_record?
+    - if Spina.config.locales.size > 1
+      %div{style: 'display: inline-block; margin-left: 12px; top: -4px', data: {dropdown: true}}
+        = link_to '#', class: 'button button-link button-round button-small', data: {trigger: 'dropdown', target: '#locales'} do
+          = icon('comment')
+          = @locale.upcase
+
+        %ul#locales
+          - Spina.config.locales.each do |locale|
+            %li
+              = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
+
+  #header_actions
+    %button.button.button-primary{type: 'submit', style: 'margin-right: 0', data: {disable_with: t('spina.jobs.job_roles.saving')}}
+      = icon('check')
+      =t 'spina.jobs.job_roles.save'
+
+  %nav#secondary.tabs
+    %ul
+      - @tabs.each_with_index do |tab, i|
+        %li{class: (i==0 ? 'active' : '')}
+          = link_to t("spina.jobs.job_roles.#{tab}"), "##{tab}"
+
+= hidden_field_tag :locale, @locale
+
+- Globalize.with_locale(@locale) do
+  - @tabs.each do |tab|
+    = render "spina/admin/jobs/job_roles/form_#{tab}", f: f
+
+  - unless @job_role.new_record?
+    .pull-right= link_to t('spina.permanently_delete'), spina.admin_jobs_job_role_path(@job_role), method: :delete, data: {confirm: t('spina.jobs.job_roles.delete_confirmation', subject: @job_role.title)}, class: 'button button-link button-danger'
