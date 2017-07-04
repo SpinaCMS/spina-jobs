@@ -2,3 +2,5 @@
 
 %p!= @job_role.introduction
 %p!= @job_role.description
+
+%p= link_to 'Apply', spina.jobs_job_role_apply_path(@job_role)

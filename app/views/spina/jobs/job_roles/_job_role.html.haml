@@ -1,5 +1,3 @@
-
-%h1= job_role.title
-
-%p!= job_role.introduction
-%p!= job_role.description
+%li{class: dom_class(job_role), id: dom_id(job_role)}
+  %h2= job_role.title
+  %p= link_to 'View Job', spina.jobs_job_role_path(job_role)

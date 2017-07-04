@@ -1,0 +1,12 @@
+- job_role = @job_role || job_application.job_role
+%tr{class: dom_class(job_application), id: dom_id(job_application)}
+  %td.nowrap= job_application.name
+  %td
+    .ref= job_role.ref
+    .job_role= job_role.title
+  %td.nowrap= l job_application.created_at, format: :long
+
+  %td.nowrap.text-right
+    = link_to spina.admin_jobs_job_application_path(job_application.id), class: 'button button-small button-link dd-nodrag' do
+      = icon 'eye'
+      = t('spina.view')

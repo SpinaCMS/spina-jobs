@@ -1,0 +1,17 @@
+.table-container
+  %table.table
+    %thead
+      %tr
+        %th Applicant Name
+        %th Job Ref
+        %th Uploaded at
+        %th
+
+    %tbody
+      - if @job_applications.any?
+        = render partial: 'job_application', collection: @job_applications, as: :job_application
+
+      - else
+        %tr
+          %td.align-center{colspan: 4}
+            %em There are no job applications yet

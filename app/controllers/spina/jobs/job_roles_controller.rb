@@ -1,6 +1,6 @@
 module Spina
   module Jobs
-    class JobRolesController < ApplicationController
+    class JobRolesController < ::Spina::ApplicationController
       before_action :set_page
 
       def index

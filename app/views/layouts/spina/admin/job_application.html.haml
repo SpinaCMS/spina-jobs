@@ -5,10 +5,6 @@
 
     .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
 
-    %nav#secondary.tabs
-      %ul
-        %li{class: ('active' if controller_name == 'job_roles' and action_name == 'index')}
-          = link_to t('spina.jobs.job_roles.index'), spina.admin_jobs_job_roles_path
   = yield
 
 = render template: "layouts/spina/admin/admin"

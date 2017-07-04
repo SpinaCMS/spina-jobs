@@ -8,4 +8,6 @@ RSpec.configure do |config|
   end
 
   config.include ::Rails::Controller::Testing::TemplateAssertions, type: :helper
+
+  config.include ActionDispatch::TestProcess
 end

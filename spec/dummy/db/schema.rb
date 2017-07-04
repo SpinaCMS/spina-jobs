@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616152118) do
+ActiveRecord::Schema.define(version: 20170703151347) do
 
   create_table "spina_accounts", force: :cascade do |t|
     t.string   "name"
@@ -48,6 +48,18 @@ ActiveRecord::Schema.define(version: 20170616152118) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "spina_jobs_job_applications", force: :cascade do |t|
+    t.integer  "job_role_id"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.text     "cover_letter"
+    t.string   "file"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["job_role_id"], name: "index_spina_jobs_job_applications_on_job_role_id"
   end
 
   create_table "spina_jobs_job_roles", force: :cascade do |t|

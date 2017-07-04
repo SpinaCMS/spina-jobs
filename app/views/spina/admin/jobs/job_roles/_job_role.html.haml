@@ -14,9 +14,13 @@
     = job_role.ref
 
   %td.nowrap.text-right
-    = link_to spina.jobs_job_role_path(job_role), class: 'button button-small button-link dd-nodrag' do
+    = link_to spina.jobs_job_role_path(job_role.id), class: 'button button-small button-link dd-nodrag' do
       = icon 'eye'
       = t('spina.view')
+
+    = link_to spina.admin_jobs_job_role_job_applications_path(job_role.id), class: 'button button-small button-link dd-nodrag' do
+      = icon 'inbox-outline'
+      = t('spina.jobs.job_applications.view')
 
     = link_to spina.edit_admin_jobs_job_role_path(job_role.id), class: 'button button-link' do
       = icon 'pencil-outline'

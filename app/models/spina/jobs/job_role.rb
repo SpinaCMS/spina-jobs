@@ -4,6 +4,8 @@ module Spina::Jobs
 
     friendly_id :friendly_id_source, use: :slugged
 
+    has_many :job_applications, dependent: :destroy
+
     validates_presence_of   :title, :description
     validates_uniqueness_of :title
 

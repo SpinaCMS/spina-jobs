@@ -1,0 +1,31 @@
+- content_for :plugin_stylesheets do
+  = stylesheet_link_tag 'spina/admin/jobs'
+.well
+  %table.details
+    %tr
+      %th Name
+      %td= @job_application.name
+    %tr
+      %th Job Role
+      %td= link_to @job_role.title, spina.admin_jobs_job_role_job_applications_path(@job_role.id)
+    %tr
+      %th Email
+      %td= mail_to @job_application.email
+    %tr
+      %th Phone
+      %td= tel_link @job_application.phone
+    %tr
+      %th Posted at
+      %td= l @job_application.created_at, format: :long
+
+  - if @job_application.cover_letter
+    != simple_format(@job_application.cover_letter)
+
+  - if @job_application.file
+    = link_to @job_application.file.url do
+      = icon 'document'
+      %strong Download CV
+
+.pull-right
+  = link_to t('spina.permanently_delete'), spina.admin_jobs_job_application_path(@job_application),
+    class: 'button button-link button-danger', method: :delete, data: { confirm: t('spina.jobs.job_applications.delete_confirmation')}

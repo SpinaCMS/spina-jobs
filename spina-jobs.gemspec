@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'spina', '~> 0.11', '>= 0.11.1'
   s.add_runtime_dependency 'friendly_id', '~> 5.2', '>= 5.2.1'
   s.add_runtime_dependency 'draper', '~> 3.0', '>= 3.0.0'
+  s.add_runtime_dependency 'tel_link_rails', '~> 0.0.2'
 
   s.add_development_dependency 'sqlite3', '~> 1.3.13', '>= 1.3.13'
   s.add_development_dependency 'simplecov', '~> 0'

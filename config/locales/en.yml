@@ -9,6 +9,7 @@ en:
       title: Job Postings
 
       job_roles:
+        index: All Job Postings
         title: Job Postings
         new: New Job
         save: Save jost
@@ -17,6 +18,13 @@ en:
         job_content: Content
         job_configuration: Settings
         concept: Draft
+        delete_confirmation: Are you sure you want to delete this job posting?
+
+      job_applications:
+        index: All Job Applications
+        title: Job Applications
+        view: Applications
+        delete_confirmation: Are you sure you want to delete this job application?
 
   activerecord:
     attributes:

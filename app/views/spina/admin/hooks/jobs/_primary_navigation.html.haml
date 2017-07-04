@@ -4,5 +4,7 @@
     = t('spina.jobs.title')
     = icon 'caret-right'
   %ul
-    %li{class: ('active' if current_admin_path.start_with?('/jobs'))}
-      = link_to t('spina.jobs.title'), admin_jobs_job_roles_path
+    %li{class: ('active' if current_admin_path.start_with?('/jobs/roles'))}
+      = link_to t('spina.jobs.job_roles.title'), admin_jobs_job_roles_path
+    %li{class: ('active' if current_admin_path.start_with?('/jobs/applications'))}
+      = link_to t('spina.jobs.job_applications.title'), admin_jobs_job_applications_path

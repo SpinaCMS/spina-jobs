@@ -1,0 +1,24 @@
+%h1 Apply for #{@job_role.title}
+
+= form_for @job_application, url: spina.jobs_job_role_job_applications_path(@job_role) do |f|
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :email
+    %br
+    = f.email_field :email
+  %p
+    = f.label :phone
+    %br
+    = f.telephone_field :phone
+  %p
+    = f.label :cover_letter
+    %br
+    = f.text_area :cover_letter
+  %p
+    = f.label :file
+    = f.file_field :file
+  %p
+    = f.submit
