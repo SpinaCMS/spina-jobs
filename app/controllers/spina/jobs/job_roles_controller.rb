@@ -22,6 +22,7 @@ module Spina
         @page = Spina::Page.find_or_create_by name: 'jobs' do |page|
           page.link_url = '/jobs'
           page.title = 'Jobs'
+          page.view_template = 'show'
           page.deletable = false
         end
       end
