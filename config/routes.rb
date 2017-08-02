@@ -13,7 +13,6 @@ Spina::Engine.routes.draw do
         resources :job_applications, path: :applications, only: [:index, :show, :destroy], shallow: true
       end
       resources :job_applications, path: :applications, only: :index
-      resource :job_settings, path: :settings, only: [:edit, :update]
     end
   end
 end

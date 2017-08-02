@@ -1,0 +1,4 @@
+<%= raw strip_tags(Spina::Jobs::Setting.first.confirmation_message
+  .gsub("%name%", @job_application.name)
+  .gsub('div><div', "div>\n<div"))
+%>

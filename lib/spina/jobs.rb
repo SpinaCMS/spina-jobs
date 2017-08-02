@@ -7,5 +7,6 @@ require 'tel_link_rails'
 module Spina
   module Jobs
     require "spina/jobs/engine"
+    require 'spina/jobs/configuration'
   end
 end

@@ -1,0 +1,26 @@
+<%=raw t('.greeting') %>,
+
+<%=raw t('.you_recieved_new_job_application') %>
+
+<%=raw t('.job_application_starts') %>
+
+<%=raw t('.from') %>: <%= @job_application.name  %>
+<%=raw t('.email') %>: <%= @job_application.email %>
+<%=raw t('.phone') %>: <%= @job_application.phone %>
+
+<% if @job_application.cover_letter %>
+  <%=raw t('.cover_letter') %>:
+  <%=raw strip_tags(@job_application.cover_letter) %>
+<% end %>
+
+<% if @job_application.file %>
+  <%= raw t('.resume') %>:
+  <%= raw @job_application.file.url(:host => @host) %>
+<% end %>
+
+<%=raw t('.job_application_ends') %>
+
+<%=raw t('.closing_line') %>,
+<%=raw Spina::Account.first.name %>
+
+<%=raw t('.ps') -%>

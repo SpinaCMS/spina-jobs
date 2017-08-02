@@ -2,11 +2,16 @@ en:
   spina:
     view: View
 
-    preferences:
-      jobs: Job Postings
-
     jobs:
       title: Job Postings
+
+      settings:
+        confirmation_subject: Confirmation Subject
+        confirmation_subject_placeholder: 'Subject for confirmation email to applicant'
+        notification_subject: Notification Subject
+        notification_subject_placeholder: 'Subject for notification email to you'
+        notification_recipients: Notification Recipients
+        notification_recipients_placeholder: 'Comma separated list of email addresses for notifications'
 
       job_roles:
         index: All Job Postings
@@ -25,6 +30,21 @@ en:
         title: Job Applications
         view: Applications
         delete_confirmation: Are you sure you want to delete this job application?
+        from_name: "%{name} [%{site_name}]"
+
+      job_application_mailer:
+        notification:
+          greeting: Hello
+          you_recieved_new_job_application: You have received a new application on your site.
+          job_application_starts: --- Beginning of application ---
+          job_application_ends: --- End of application ---
+          from: From
+          email: Email
+          phone: Phone
+          cover_letter: Cover letter
+          file: CV
+          closing_line: Kind regards
+          ps: PS All applications are stored in the 'Job Postings' section so you can refer to them later.
 
   activerecord:
     attributes:

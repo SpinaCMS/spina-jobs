@@ -1,0 +1,31 @@
+%p #{t('.greeting')},
+
+%p #{t('.you_recieved_new_job_application')}
+
+%p #{t('.job_application_starts')}
+
+%p
+  #{t('.from')}: #{@job_application.name}
+  %br
+  #{t('.email')}: #{@job_application.email}
+  %br
+  #{t('.phone')}: #{@job_application.phone}
+
+- if @job_application.cover_letter
+  %p
+    %strong #{t('.cover_letter')}:
+    %br
+    #{strip_tags(@job_application.cover_letter)}
+
+- if @job_application.file
+  #{t('.resume')}:
+  #{@job_application.file.url(:host => @host)}
+
+%p #{t('.job_application_ends')}
+
+%p
+  #{t('.closing_line')},
+  %br
+  #{Spina::Account.first.name}
+
+%p #{t('.ps')}

@@ -7,6 +7,12 @@ module Spina
         ::Spina::Plugin.register do |plugin|
           plugin.name = "jobs"
           plugin.namespace = 'jobs'
+          plugin.settings = {
+            confirmation_subject: {string: 'Thank you for your job application'},
+            confirmation_message: {wysiwyg: "<div>Thank you for your job application %name%,</div><div></div><div>This email is a receipt to confirm we have received your job application and we'll be in touch shortly.</div><div></div><div>Thanks.</div>"},
+            notification_subject: {string: 'New job application from your website'},
+            notification_recipients: {string: (Spina::User.first.email rescue nil)}
+          }
         end
       end
 
