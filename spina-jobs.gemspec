@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'draper', '~> 3.0', '>= 3.0.0'
   s.add_runtime_dependency 'tel_link_rails', '~> 0.0.2'
 
-  s.add_development_dependency 'sqlite3', '~> 1.3.13', '>= 1.3.13'
+  s.add_development_dependency 'pg', '~> 0.20'
   s.add_development_dependency 'simplecov', '~> 0'
   s.add_development_dependency 'rspec-rails', '~> 3.6.0', '>= 3.6.0'
   s.add_development_dependency "factory_girl_rails", "~> 4.0"
