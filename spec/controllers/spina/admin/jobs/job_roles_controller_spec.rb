@@ -2,9 +2,9 @@ require 'rails_helper'
 
 module Spina::Admin
   RSpec.describe Jobs::JobRolesController, type: :controller do
-    let(:job_roles) { FactoryGirl.create_list :spina_jobs_job_role, 3 }
-    let(:job_role) { FactoryGirl.create :spina_jobs_job_role }
-    let(:attributes) { FactoryGirl.attributes_for :spina_jobs_job_role }
+    let(:job_roles) { FactoryBot.create_list :spina_jobs_job_role, 3 }
+    let(:job_role) { FactoryBot.create :spina_jobs_job_role }
+    let(:attributes) { FactoryBot.attributes_for :spina_jobs_job_role }
 
     context 'signed in as an admin' do
       before { sign_in }
@@ -12,7 +12,7 @@ module Spina::Admin
       describe 'GET #index' do
         subject { get :index }
         it { is_expected.to render_template :index }
-        it { is_expected.to have_http_status :success }
+        it { is_expected.to be_successful }
 
         it 'assigns job roles' do
           subject
@@ -23,7 +23,7 @@ module Spina::Admin
       describe 'GET #new' do
         subject { get :new }
         it { is_expected.to render_template :new }
-        it { is_expected.to have_http_status :success }
+        it { is_expected.to be_successful }
 
         it 'assigns job role' do
           subject
@@ -38,7 +38,7 @@ module Spina::Admin
 
         context 'with invalid attributes' do
           subject { post :create, params: { job_role: { introduction: 'foo' } } }
-          it { is_expected.to have_http_status :success }
+          it { is_expected.to be_successful }
           it { is_expected.to render_template :new }
           it { expect{subject}.to_not change(Spina::Jobs::JobRole, :count) }
         end
@@ -46,7 +46,7 @@ module Spina::Admin
 
       describe 'GET #edit' do
         subject { get :edit, params: { id: job_role.id } }
-        it { is_expected.to have_http_status :success }
+        it { is_expected.to be_successful }
         it { is_expected.to render_template :edit }
         it 'assigns job role' do
           subject
@@ -62,7 +62,7 @@ module Spina::Admin
 
         context 'with invalid attributes' do
           subject { post :update, params: { id: job_role.id, job_role: { title: '' } } }
-          it { is_expected.to have_http_status :success }
+          it { is_expected.to be_successful }
           it { is_expected.to render_template :edit }
           it { expect{subject}.to_not change{job_role.reload.title} }
         end
@@ -78,7 +78,7 @@ module Spina::Admin
     context 'not signed in' do
       describe 'GET #index' do
         subject { get :index }
-        it { is_expected.to_not have_http_status :success }
+        it { is_expected.to_not be_successful }
         it { is_expected.to_not render_template :index }
       end
     end

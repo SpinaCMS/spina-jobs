@@ -2,7 +2,7 @@ require 'rails_helper'
 
 module Spina::Jobs
   RSpec.describe JobRole, type: :model do
-    subject { FactoryGirl.build :spina_jobs_job_role, title: 'My Title' }
+    subject { FactoryBot.build :spina_jobs_job_role, title: 'My Title' }
 
     it { is_expected.to be_valid }
 

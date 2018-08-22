@@ -15,7 +15,12 @@ gem 'spina-jobs'
 
 And then execute:
 ```bash
-$ bundle
+$ bundle install
+```
+
+And install:
+```bash
+$ rails g spina_jobs:install
 ```
 
 Or install it yourself as:

@@ -2,7 +2,7 @@ module Spina::Jobs
   class JobApplication < ApplicationRecord
     belongs_to :job_role
 
-    mount_uploader :file, ::Spina::FileUploader
+    has_one_attached :file
 
     belongs_to :job_role
 
