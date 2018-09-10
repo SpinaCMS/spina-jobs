@@ -1,10 +1,8 @@
 module Spina::Jobs
   class JobApplication < ApplicationRecord
-    belongs_to :job_role
+    belongs_to :job_role, optional: true
 
     has_one_attached :file
-
-    belongs_to :job_role
 
     validates :name, :phone, :email, presence: true
     validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i },
