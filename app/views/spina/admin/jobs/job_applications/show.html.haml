@@ -5,9 +5,10 @@
     %tr
       %th Name
       %td= @job_application.name
-    %tr
-      %th Job Role
-      %td= link_to @job_role.title, spina.admin_jobs_job_role_job_applications_path(@job_role.id)
+    - if @job_role.present?
+      %tr
+        %th Job Role
+        %td= link_to @job_role.title, spina.admin_jobs_job_role_job_applications_path(@job_role.id)
     %tr
       %th Email
       %td= mail_to @job_application.email

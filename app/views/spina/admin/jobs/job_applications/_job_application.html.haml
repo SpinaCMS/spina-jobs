@@ -2,8 +2,11 @@
 %tr{class: dom_class(job_application), id: dom_id(job_application)}
   %td.nowrap= job_application.name
   %td
-    .ref= job_role.ref
-    .job_role= job_role.title
+    - if job_role.present?
+      .ref= job_role.ref
+      .job_role= job_role.title
+    - else
+      /-
   %td.nowrap= l job_application.created_at, format: :long
 
   %td.nowrap.text-right
