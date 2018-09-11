@@ -22,7 +22,7 @@
     != simple_format(@job_application.cover_letter)
 
   - if @job_application.file
-    = link_to @job_application.file.url do
+    = link_to file_url(@job_application.file) do
       = icon 'document'
       %strong Download CV
 

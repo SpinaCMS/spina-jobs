@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.feature "Job Roles", type: :feature do
 
   describe 'listing job roles' do
-    let!(:posts) { FactoryGirl.create_list :spina_jobs_job_role, 3 }
-    let!(:future_post) { FactoryGirl.create :spina_jobs_job_role, enabled: true, draft: false, published_at: Date.today + 1}
+    let!(:posts) { create_list(:spina_jobs_job_role, 3) }
+    let!(:future_post) { create(:spina_jobs_job_role, enabled: true, draft: false, published_at: Date.today + 1) }
     before { sign_in }
 
     it 'shows all the job roles' do

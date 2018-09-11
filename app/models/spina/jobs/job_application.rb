@@ -2,9 +2,7 @@ module Spina::Jobs
   class JobApplication < ApplicationRecord
     belongs_to :job_role
 
-    mount_uploader :file, ::Spina::FileUploader
-
-    belongs_to :job_role
+    has_one_attached :file
 
     validates :name, :phone, :email, presence: true
     validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i },

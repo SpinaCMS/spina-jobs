@@ -2,13 +2,13 @@ require 'rails_helper'
 
 module Spina::Jobs
   RSpec.describe JobApplicationsController, type: :controller do
-    let!(:account) { ::Spina::Account.create name: 'MySite', theme: 'default' }
-    let(:job_role) { FactoryGirl.create :spina_jobs_job_role }
-    let(:attributes) { FactoryGirl.attributes_for :spina_jobs_job_application }
+    let!(:account) { ::Spina::Account.create(name: 'MySite', theme: 'default') }
+    let(:job_role) { create(:spina_jobs_job_role) }
+    let(:attributes) { attributes_for(:spina_jobs_job_application) }
 
     describe 'GET #new' do
       subject { get :new, params: { job_role_id: job_role.id } }
-      it { is_expected.to have_http_status :success }
+      it { is_expected.to be_successful }
       it { is_expected.to render_template :new }
     end
 
@@ -21,7 +21,7 @@ module Spina::Jobs
         subject { post :create, params: { job_role_id: job_role.id, job_application: { name: 'foo' } } }
         it { expect{subject}.to_not change(Spina::Jobs::JobApplication, :count) }
         it { is_expected.to render_template :new }
-        it { is_expected.to have_http_status :success }
+        it { is_expected.to be_successful }
       end
     end
   end
