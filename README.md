@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/initforthe/spina-jobs.svg?branch=master)](https://travis-ci.org/initforthe/spina-jobs) [![Code Climate](https://codeclimate.com/github/initforthe/spina-jobs/badges/gpa.svg)](https://codeclimate.com/github/initforthe/spina-jobs) [![Test Coverage](https://codeclimate.com/github/initforthe/spina-jobs/badges/coverage.svg)](https://codeclimate.com/github/initforthe/spina-jobs/coverage)
+[![Build Status](https://travis-ci.org/SpinaCMS/spina-jobs.svg?branch=master)](https://travis-ci.org/initforthe/spina-jobs) [![Code Climate](https://codeclimate.com/github/initforthe/spina-jobs/badges/gpa.svg)](https://codeclimate.com/github/initforthe/spina-jobs) [![Test Coverage](https://codeclimate.com/github/initforthe/spina-jobs/badges/coverage.svg)](https://codeclimate.com/github/initforthe/spina-jobs/coverage)
 
 # Spina::Jobs
-Short description and motivation.
+Jobs plugin for [Spina CMS](https://www.spinacms.com/). It supports job posts and applications.
 
 ## Usage
 How to use my plugin.
@@ -29,7 +29,14 @@ $ gem install spina-jobs
 ```
 
 ## Contributing
-Contribution directions go here.
+The version of Spina to develop this engine against is defined in the gemspec. To override the version of refinery to develop against, edit the project Gemfile to point to a local path containing a clone of Spina CMS.
+
+### Testing
+
+With rake spec
+```bash
+$ bundle exec rake spec
+```
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
