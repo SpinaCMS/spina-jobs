@@ -2,8 +2,8 @@ require 'rails_helper'
 
 module Spina::Admin
   RSpec.describe Jobs::JobApplicationsController, type: :controller do
-    let(:job_application) { FactoryBot.create :spina_jobs_job_application }
-    let(:job_applications) { FactoryBot.create_list :spina_jobs_job_application, 3 }
+    let(:job_application) { create(:spina_jobs_job_application) }
+    let(:job_applications) { create_list(:spina_jobs_job_application, 3) }
 
     context 'signed in as an admin' do
       before { sign_in }
@@ -19,8 +19,8 @@ module Spina::Admin
         end
 
         context 'for a specific job role' do
-          let(:job_role) { FactoryBot.create :spina_jobs_job_role }
-          let(:job_applications) { FactoryBot.create_list :spina_jobs_job_application, 3, job_role: job_role }
+          let(:job_role) { create(:spina_jobs_job_role) }
+          let(:job_applications) { create_list(:spina_jobs_job_application, 3, job_role: job_role) }
           subject { get :index, params: { job_role_id: job_role.id } }
 
           it { is_expected.to render_template :index }

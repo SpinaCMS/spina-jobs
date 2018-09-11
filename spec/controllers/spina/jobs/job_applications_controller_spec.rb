@@ -2,9 +2,9 @@ require 'rails_helper'
 
 module Spina::Jobs
   RSpec.describe JobApplicationsController, type: :controller do
-    let!(:account) { ::Spina::Account.create name: 'MySite', theme: 'default' }
-    let(:job_role) { FactoryBot.create :spina_jobs_job_role }
-    let(:attributes) { FactoryBot.attributes_for :spina_jobs_job_application }
+    let!(:account) { ::Spina::Account.create(name: 'MySite', theme: 'default') }
+    let(:job_role) { create(:spina_jobs_job_role) }
+    let(:attributes) { attributes_for(:spina_jobs_job_application) }
 
     describe 'GET #new' do
       subject { get :new, params: { job_role_id: job_role.id } }

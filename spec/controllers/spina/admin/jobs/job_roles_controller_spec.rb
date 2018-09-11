@@ -2,9 +2,9 @@ require 'rails_helper'
 
 module Spina::Admin
   RSpec.describe Jobs::JobRolesController, type: :controller do
-    let(:job_roles) { FactoryBot.create_list :spina_jobs_job_role, 3 }
-    let(:job_role) { FactoryBot.create :spina_jobs_job_role }
-    let(:attributes) { FactoryBot.attributes_for :spina_jobs_job_role }
+    let(:job_roles) { create_list(:spina_jobs_job_role, 3) }
+    let(:job_role) { create(:spina_jobs_job_role) }
+    let(:attributes) { attributes_for(:spina_jobs_job_role) }
 
     context 'signed in as an admin' do
       before { sign_in }

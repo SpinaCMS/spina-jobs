@@ -2,10 +2,9 @@ require 'rails_helper'
 
 module Spina
   RSpec.describe Jobs::JobRolesController, type: :controller do
-    let!(:account) { ::Spina::Account.create name: 'MySite', theme: 'default' }
-
-    let(:job_roles) { FactoryBot.create_list :spina_jobs_job_role, 3, enabled: true, draft: false }
-    let(:job_role) { FactoryBot.create :spina_jobs_job_role, enabled: true, draft: false }
+    let!(:account) { ::Spina::Account.create(name: 'MySite', theme: 'default') }
+    let(:job_roles) { create_list(:spina_jobs_job_role, 3, enabled: true, draft: false) }
+    let(:job_role) { create(:spina_jobs_job_role, enabled: true, draft: false) }
 
     describe 'GET #index' do
       subject { get :index }
