@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Spina::Jobs::VERSION
   s.authors     = ["Tom Simnett"]
   s.email       = ["tom@initforthe.com"]
-  s.homepage    = "https://github.com/initforthe/spina-jobs"
+  s.homepage    = "https://github.com/SpinaCMS/spina-jobs"
   s.summary     = "Job posting manager for Spina CMS"
   s.description = "Post jobs and accept applications for them within Spina CMS"
   s.license     = "MIT"
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_runtime_dependency 'spina', '>= 0.11.1'
+  s.add_runtime_dependency 'spina', '~> 1.0.0'
   s.add_runtime_dependency 'friendly_id', '~> 5.2', '>= 5.2.1'
   s.add_runtime_dependency 'draper', '~> 3.0', '>= 3.0.0'
   s.add_runtime_dependency 'tel_link_rails', '~> 0.0.2'
